@@ -1,0 +1,27 @@
+{
+  "services": [
+    {
+      "id": "sentry-web",
+      "name": "sentry-web",
+      "port": 9000,
+      "checks": [
+        {
+          "script": "nmap 127.0.0.1 -PN -p 9000 | grep open",
+          "interval": "10s"
+        },
+        {
+          "script": "supervisorctl status|egrep 'sentry-beat.*RUNNING'",
+          "interval": "10s"
+        },
+        {
+          "script": "supervisorctl status|egrep 'sentry-web.*RUNNING'",
+          "interval": "10s"
+        },
+        {
+          "script": "supervisorctl status|egrep 'sentry-worker.*RUNNING'",
+          "interval": "10s"
+        }
+      ]
+    }
+  ]
+}

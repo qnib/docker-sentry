@@ -10,6 +10,7 @@ consul:
     dns: 127.0.0.1
 
 sentry:
+    privileged: true
     hostname: sentry
     container_name: sentry
     image: qnib/sentry

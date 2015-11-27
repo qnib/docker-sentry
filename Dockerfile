@@ -34,13 +34,6 @@ RUN mkdir -p /home/user/.sentry \
 ADD sentry/sentry.conf.py /home/user/.sentry/sentry.conf.py
 ADD etc/supervisord.d/*.ini /etc/supervisord.d/
 ADD opt/qnib/sentry/bin/start_celery* /opt/qnib/sentry/bin/
-
+ADD etc/consul.d/*.json /etc/consul.d/
 ADD sentry/sentry.db /home/user/.sentry/sentry.db
 RUN chown user: /home/user/.sentry/sentry.db
-#USER user
-#ADD db_dump.json /tmp/
-#ADD opt/qnib/redis/bin/start_detached.sh /opt/qnib/redis/bin/
-#RUN /opt/qnib/redis/bin/start_detached.sh && \
-#    cd /tmp/ && \
-#    sentry upgrade --noinput
-#USER root
