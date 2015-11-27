@@ -1,7 +1,8 @@
 import raven
+import os
 
 client = raven.Client(
-    dsn='SENTRY_DNS'
+    dsn=os.environ['SENTRY_DNS']
 
     # inform the client which parts of code are yours
     # include_paths=['my.app']
