@@ -33,7 +33,7 @@ RUN mkdir -p /home/user/.sentry \
 	&& chown -R user:user /home/user/.sentry
 ADD sentry/sentry.conf.py /home/user/.sentry/sentry.conf.py
 ADD etc/supervisord.d/*.ini /etc/supervisord.d/
-ADD opt/qnib/sentry/bin/start_celery* /opt/qnib/sentry/bin/
+ADD opt/qnib/sentry/bin/start_* /opt/qnib/sentry/bin/
 ADD etc/consul.d/*.json /etc/consul.d/
 ADD sentry/sentry.db /home/user/.sentry/sentry.db
 RUN chown user: /home/user/.sentry/sentry.db

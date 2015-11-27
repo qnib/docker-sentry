@@ -16,6 +16,7 @@ sentry:
     image: qnib/sentry
     environment:
      - DC_NAME=dc1
+     - SENTRY_URL_PREFIX=http://192.168.99.100
     ports:
      - "9000:9000"
     dns: 127.0.0.1
