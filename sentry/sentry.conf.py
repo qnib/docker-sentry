@@ -149,7 +149,7 @@ SENTRY_FILESTORE_OPTIONS = {
 ##############
 
 # You MUST configure the absolute URI root for Sentry:
-SENTRY_URL_PREFIX = 'http://sentry.example.com'  # No trailing slash!
+SENTRY_URL_PREFIX = 'http://sentry-web.service.consul'  # No trailing slash!
 
 # If you're using a reverse proxy, you should enable the X-Forwarded-Proto
 # header and uncomment the following settings
